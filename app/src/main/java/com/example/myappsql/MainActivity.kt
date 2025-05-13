@@ -1,5 +1,6 @@
 package com.example.myappsql
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         val idInput = findViewById<EditText>(R.id.editId)
         val updateButton = findViewById<Button>(R.id.btnUpdate)
         val deleteButton = findViewById<Button>(R.id.btnDelete)
+        val btnSegundaTela = findViewById<Button>(R.id.btn_segundaTela)
 
         addButton.setOnClickListener(){
             val name = nameInput.text.toString()
@@ -85,6 +87,11 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Informe o ID para apagar", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        btnSegundaTela.setOnClickListener(){
+            val segundaTela = Intent(this, SegundaTela::class.java)
+            startActivity(segundaTela)
         }
     }
 }
